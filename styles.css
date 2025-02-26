@@ -94,12 +94,9 @@ body {
 }
 
 .hero-content {
-    text-align: center; /* Ensures content stays centered */
-    transform: none; /* Remove unwanted translation */
-    max-width: 80%;
-    margin: auto; /* Ensures stability */
+    text-align: left;
+    transform: translateX(100px); /* took me forever to figure this one out lol */
 }
-
 
 .hero h1 {
     font-size: 50px;
@@ -198,6 +195,7 @@ body {
     text-align: center;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
+    transform: translateY(50px);
     width: 100%;
     margin-left: 15%;
     animation: fadeInBlur 1s ease-out forwards;
@@ -366,3 +364,4 @@ body {
         font-size: 32px;
     }
 }
+
