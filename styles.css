@@ -1,0 +1,365 @@
+/* GENERAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Unbounded', sans-serif;
+    background: rgb(0, 0, 0);
+    color: white;
+    overflow-x: hidden;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    padding: 0 10px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(6, 6, 6, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li {
+    list-style-type: none;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff4747;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+    position: relative;
+    text-align: center;
+    animation: fadeInBlur 1.5s ease-out forwards;
+}
+
+.hero-content {
+    text-align: left;
+    transform: translateX(100px); /* took me forever to figure this one out lol */
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.hero p.subtext {
+    font-size: 21px;
+    color: #b8b8b8;
+    margin-bottom: 20px;
+    max-width: 80%;
+    animation: fadeInBlur 1.5s ease-out forwards;
+}
+
+/* cool thing i foind on github i think */
+.light-rays {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(100, 100, 100, 0.15) 10%, rgba(0,0,0,0) 80%);
+    opacity: 0.5;
+    filter: blur(50px);
+    animation: moveRays 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveRays {
+    from { transform: scale(1.05) rotate(5deg); opacity: 0.4; }
+    to { transform: scale(1.2) rotate(-5deg); opacity: 0.6; }
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.footer-line {
+    width: 60%;
+    margin: 15px auto;
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.footer a {
+    color: #ff4747;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #ff6b6b;
+}
+
+/* Button */
+.cta-button {
+    padding: 12px 30px;
+    background: #ff4747;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    margin-top: 40px;
+    animation: pulse 1s infinite;
+    border: none;
+    color: white;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background: #ff2e2e;
+    transform: scale(1.05);
+}
+
+/* SECTION */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 180px 100px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    margin-left: 15%;
+    animation: fadeInBlur 1s ease-out forwards;
+}
+
+.section h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* FEATURE CARDS */
+.feature-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 30px;
+    width: 30%;
+    opacity: 0;
+    transform: translateY(50px);
+    visibility: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s ease-in-out;
+    cursor: pointer;
+    min-width: 250px;
+}
+
+.feature-card.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: fadeInBlur 1s ease-out forwards;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #aaaa;
+}
+
+/* THRIFT BENEFITS SECTION */
+#thrift-benefits {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 180px 100px;
+    width: 100%;
+    margin-left: 15%;
+    animation: fadeInBlur 1s ease-out forwards;
+}
+
+#thrift-benefits h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+    animation: fadeInBlur 1.5s ease-out forwards;
+}
+
+/* Thrift bf */
+.thrift-benefit-item {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(50px);
+    visibility: hidden;
+    transition: transform 0.3s, opacity 0.5s ease-in-out;
+}
+
+.thrift-benefit-item.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: fadeInBlur 1s ease-out forwards;
+}
+
+/* Thrift Info Styling */
+.thrift-info {
+    flex: 1;
+    text-align: left;
+}
+
+.thrift-info h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #aaaa;
+    /* highlight */
+    background: linear-gradient(to right, #ff4747, #ff2e2e);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.thrift-info p {
+    font-size: 16px;
+    color: #b8b8b8;
+}
+
+/* Image Styling */
+.thrift-img {
+    flex: 1;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 350px;
+}
+
+/* SCROLLING ANIMATIONS */
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .thrift-benefit-item {
+        flex-direction: column;
+    }
+
+    .thrift-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .feature-cards {
+        flex-direction: column;
+    }
+
+    .feature-card {
+        width: 80%;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+}
