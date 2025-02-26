@@ -13,7 +13,7 @@ body {
     line-height: 1.5;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: 100vh;
     flex-direction: column;
     scroll-behavior: smooth;
@@ -91,7 +91,6 @@ body {
     position: relative;
     text-align: center;
     animation: fadeInBlur 1.5s ease-out forwards;
-    margin-top: 100px; /* Prevent content from hiding behind navbar */
 }
 
 .hero-content {
@@ -303,6 +302,7 @@ body {
     font-weight: 600;
     margin-bottom: 10px;
     color: #aaaa;
+    /* highlight */
     background: linear-gradient(to right, #ff4747, #ff2e2e);
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -355,6 +355,8 @@ body {
         width: 80%;
     }
 }
+
+
 
 @media (max-width: 480px) {
     .hero h1 {
