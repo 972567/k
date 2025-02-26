@@ -80,22 +80,23 @@ body {
     transform-origin: bottom left;
 }
 
-/* HERO SECTION */
 .hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 100px;
     position: relative;
     text-align: center;
     animation: fadeInBlur 1.5s ease-out forwards;
+    width: 100%;
 }
 
 .hero-content {
-    text-align: left;
-    transform: translateX(100px); /* took me forever to figure this one out lol */
+    text-align: center; /* Center text properly */
+    margin-left: auto; /* Ensure no shifting */
+    margin-right: auto; /* Ensure no shifting */
+    max-width: 80%;
 }
 
 .hero h1 {
