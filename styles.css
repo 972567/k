@@ -18,6 +18,7 @@ body {
     flex-direction: column;
     scroll-behavior: smooth;
     padding: 0 10px;
+    text-align: center; /* Ensure text is centered */
 }
 
 /* NAVBAR */
@@ -35,6 +36,7 @@ body {
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center; /* Center navbar content */
 }
 
 .navbar .logo {
@@ -48,6 +50,7 @@ body {
 .navbar nav ul {
     display: flex;
     gap: 20px;
+    justify-content: center; /* Center navigation items */
 }
 
 .navbar nav ul li {
@@ -94,8 +97,8 @@ body {
 }
 
 .hero-content {
-    text-align: left;
-    transform: translateX(100px); /* took me forever to figure this one out lol */
+    text-align: center; /* Center hero content */
+    transform: translateX(0);
 }
 
 .hero h1 {
@@ -113,7 +116,7 @@ body {
     animation: fadeInBlur 1.5s ease-out forwards;
 }
 
-/* cool thing i foind on github i think */
+/* Light rays animation */
 .light-rays {
     position: absolute;
     width: 100%;
@@ -131,7 +134,7 @@ body {
 
 /* Footer Styling */
 .footer {
-    text-align: center;
+    text-align: center; /* Center footer text */
     padding: 20px;
     margin-top: 40px;
     color: #ddd;
@@ -178,6 +181,7 @@ body {
     border: none;
     color: white;
     text-decoration: none;
+    display: inline-block; /* Ensure the button stays centered */
 }
 
 .cta-button:hover {
@@ -228,6 +232,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s ease-in-out;
     cursor: pointer;
     min-width: 250px;
+    text-align: center; /* Center card text */
 }
 
 .feature-card.visible {
@@ -271,7 +276,7 @@ body {
     animation: fadeInBlur 1.5s ease-out forwards;
 }
 
-/* Thrift bf */
+/* Thrift benefit item */
 .thrift-benefit-item {
     display: flex;
     gap: 30px;
@@ -355,8 +360,6 @@ body {
         width: 80%;
     }
 }
-
-
 
 @media (max-width: 480px) {
     .hero h1 {
