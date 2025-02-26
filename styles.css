@@ -94,9 +94,12 @@ body {
 }
 
 .hero-content {
-    text-align: left;
-    transform: translateX(100px); /* took me forever to figure this one out lol */
+    text-align: center; /* Ensures content stays centered */
+    transform: none; /* Remove unwanted translation */
+    max-width: 80%;
+    margin: auto; /* Ensures stability */
 }
+
 
 .hero h1 {
     font-size: 50px;
